@@ -1,0 +1,89 @@
+.modal {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .line {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 3px;
+    width: 100%;
+    background: black;
+    transition: 200ms ease;
+    z-index: 11;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 60px;
+    width: 60px;
+    z-index: 11;
+
+    &:hover .line {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.bg-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100%;
+  background: linear-gradient(52deg, #ff00a0 0%, #120458 100%);
+  z-index: 1;
+  transition: 1s filter;
+}
+
+.right-side {
+  grid-column: 2/3;
+  z-index: 1;
+
+  form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    input {
+      width: 250px;
+      height: 30px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    label {
+      color: white;
+      text-transform: lowercase;
+      padding: 20px 0 5px 10px;
+    }
+
+    .form-btn {
+      width: 200px;
+      height: 30px;
+      border-radius: 5px;
+      margin-top: 30px;
+      background: white;
+      border: none;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+  }
+}

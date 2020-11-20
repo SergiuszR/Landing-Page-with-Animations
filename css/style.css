@@ -1,0 +1,294 @@
+.modal {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.modal .line {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  height: 3px;
+  width: 100%;
+  background: black;
+  transition: 200ms ease;
+  z-index: 11;
+}
+
+.modal .hamburger {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  height: 60px;
+  width: 60px;
+  z-index: 11;
+}
+
+.modal .hamburger:hover .line {
+  transform: rotate(-45deg);
+}
+
+.modal .hamburger:hover {
+  cursor: pointer;
+}
+
+.bg-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100%;
+  background: linear-gradient(52deg, #ff00a0 0%, #120458 100%);
+  z-index: 1;
+  transition: 1s filter;
+}
+
+.right-side {
+  grid-column: 2/3;
+  z-index: 1;
+}
+
+.right-side form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.right-side form input {
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+}
+
+.right-side form label {
+  color: white;
+  text-transform: lowercase;
+  padding: 20px 0 5px 10px;
+}
+
+.right-side form .form-btn {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 30px;
+  background: white;
+  border: none;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2600b5;
+  background: linear-gradient(52deg, #120458 0%, #ff00a0 100%);
+  z-index: -1;
+  animation: main 2s forwards;
+  transition: 1s;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.container nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100px;
+  background: transparent;
+  animation: navbar 2s forwards;
+  animation-delay: 3500ms;
+  filter: opacity(0);
+}
+
+.container nav ul {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.container nav ul li {
+  padding: 20px;
+  font-size: 1.4rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+}
+
+.container .left-side {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .left-side .main {
+  width: 100%;
+  margin-left: 100px;
+  margin-bottom: 30px;
+  font-size: 4rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+}
+
+.container .left-side .main h1 {
+  transition: 2s;
+}
+
+.container .left-side .lead {
+  width: 600px;
+  align-self: flex-start;
+  margin-left: 50px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: white;
+}
+
+.container .left-side .lead p {
+  transition: 2s;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.container .left-side button {
+  visibility: hidden;
+  width: 200px;
+  height: 50px;
+  margin-left: 50px;
+  align-self: flex-start;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: white;
+  animation: button 2s forwards;
+  animation-delay: 2100ms;
+}
+
+.container .left-side button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 1s;
+}
+
+@keyframes navbar {
+  0% {
+    filter: opacity(0);
+  }
+  100% {
+    filter: opacity(1);
+  }
+}
+
+@keyframes main {
+  0% {
+    transform: translateX(0px);
+    transform: scaleY(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes button {
+  0% {
+    visibility: hidden;
+    transform: translateX(-400px);
+  }
+  100% {
+    visibility: visible;
+    transform: translateX(0px);
+  }
+}
+
+@media (max-width: 1330px) {
+  .main h1 {
+    color: black;
+    transition: 2s;
+  }
+  .lead p {
+    color: black;
+    transition: 2s;
+  }
+}
+
+@media (max-width: 800px) {
+  .bg,
+  .bg-modal {
+    filter: opacity(0);
+  }
+  .main h1,
+  .lead p {
+    margin-right: 20px;
+    transition: 1s;
+  }
+  #btn {
+    margin-left: 0px !important;
+    transition: 1s;
+  }
+  form {
+    transition: 1s transform;
+  }
+  form input {
+    border: 1px solid black !important;
+  }
+  form label {
+    color: black !important;
+  }
+  form .form-btn {
+    border: 1px solid black !important;
+  }
+}
+
+@media (max-width: 770px) {
+  .main h1 {
+    font-size: 6rem;
+  }
+  .lead {
+    font-size: 0.8rem !important;
+    width: 450px !important;
+  }
+  .right-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal {
+    grid-template-columns: max-content;
+  }
+}

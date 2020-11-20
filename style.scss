@@ -1,0 +1,156 @@
+@import "modal";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(38, 0, 181);
+  background: linear-gradient(52deg, #120458 0%, #ff00a0 100%);
+  z-index: -1;
+  animation: main 2s forwards;
+  transition: 1s;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: row nowrap;
+
+  nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100px;
+    background: transparent;
+    animation: navbar 2s forwards;
+    animation-delay: 3500ms;
+    filter: opacity(0);
+
+    ul {
+      display: flex;
+      list-style: none;
+      height: 100%;
+      width: 100%;
+      align-items: center;
+      justify-content: flex-end;
+
+      li {
+        padding: 20px;
+        font-size: 1.4rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .left-side {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    .main {
+      width: 100%;
+      margin-left: 100px;
+      margin-bottom: 30px;
+      font-size: 4rem;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+
+      h1 {
+        transition: 2s;
+      }
+    }
+
+    .lead {
+      width: 600px;
+      align-self: flex-start;
+      margin-left: 50px;
+      margin-bottom: 30px;
+      font-size: 1rem;
+      color: white;
+
+      p {
+        transition: 2s;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+    }
+
+    button {
+      visibility: hidden;
+      width: 200px;
+      height: 50px;
+      margin-left: 50px;
+      align-self: flex-start;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background-color: white;
+      animation: button 2s forwards;
+      animation-delay: 2100ms;
+
+      &:hover {
+        // background: transparent;
+        transform: scale(1.1);
+        cursor: pointer;
+        transition: 1s;
+      }
+    }
+  }
+}
+
+@keyframes navbar {
+  0% {
+    filter: opacity(0);
+  }
+  100% {
+    filter: opacity(1);
+  }
+}
+
+@keyframes main {
+  0% {
+    transform: translateX(0px);
+    transform: scaleY(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes button {
+  0% {
+    visibility: hidden;
+    // transform: scale(0);
+    transform: translateX(-400px);
+  }
+  100% {
+    visibility: visible;
+    // transform: scale(1);
+    transform: translateX(0px);
+  }
+}
+
+@import "media";

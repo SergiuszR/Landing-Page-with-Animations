@@ -1,0 +1,63 @@
+@media (max-width: 1330px) {
+  .main h1 {
+    color: black;
+    transition: 2s;
+  }
+  .lead p {
+    color: black;
+    transition: 2s;
+  }
+}
+
+@media (max-width: 800px) {
+  .bg,
+  .bg-modal {
+    filter: opacity(0);
+  }
+  .main h1,
+  .lead p {
+    margin-right: 20px;
+    transition: 1s;
+  }
+
+  #btn {
+    margin-left: 0px !important;
+    transition: 1s;
+  }
+
+  form {
+    transition: 1s transform;
+
+    input {
+      border: 1px solid black !important;
+    }
+
+    label {
+      color: black !important;
+    }
+
+    .form-btn {
+      border: 1px solid black !important;
+    }
+  }
+}
+@media (max-width: 770px) {
+  .main h1 {
+    font-size: 6rem;
+  }
+
+  .lead {
+    font-size: 0.8rem !important;
+    width: 450px !important;
+  }
+
+  .right-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal {
+    grid-template-columns: max-content;
+  }
+}
